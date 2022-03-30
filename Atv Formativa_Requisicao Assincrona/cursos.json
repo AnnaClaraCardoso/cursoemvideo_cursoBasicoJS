@@ -1,0 +1,43 @@
+[
+	{
+		"Curso": "Dança",
+		"Área de conhecimento": "Linguística, letras e artes",
+		"Duração": "4 anos",
+		"O Profissional": "Professor de Dança",
+		"Qtde. de Matérias": "24",
+		"Estágio obrigatório": "Mínimo 400 horas"
+	},
+	{
+		"Curso": "Geografia",
+		"Área de conhecimento": "Ciências humanas",
+		"Duração": "5 anos",
+		"O Profissional": "Geógrafo",
+		"Qtde. de Matérias": "22",
+		"Estágio obrigatório": "Mínimo 450 horas"
+	},
+	{
+		"Curso": "Psicologia",
+		"Área de conhecimento": "Ciências humanas",
+		"Duração": "5 anos",
+		"O Profissional": "Psicólogo",
+		"Qtde. de Matérias": "18",
+		"Estágio obrigatório": "Mínimo 200 horas"
+	},
+	{
+		"Curso": "Educação Física",
+		"Área de conhecimento": "Ciências da saúde",
+		"Duração": "4 anos",
+		"O Profissional": "Professor de Educação Física",
+		"Qtde. de Matérias": "20",
+		"Estágio obrigatório": "Mínimo 20% da carga horária"
+	},
+	{
+		"Curso": "Sistemas de Informação",
+		"Área de conhecimento": "Ciências exatas e da terra",
+		"Duração": "5 anos",
+		"O Profissional": "Analista de Sistemas",
+		"Qtde. de Matérias": "29",
+		"Estágio obrigatório": "Mínimo 300 horas"
+	}
+
+]

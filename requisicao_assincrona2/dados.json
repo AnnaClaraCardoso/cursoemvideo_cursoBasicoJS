@@ -1,0 +1,22 @@
+[
+    {
+        "nome": "Caio Junior",
+        "idade": "31",
+        "profissao": "Programador",
+        "esportes":
+            [
+                "Basquete",
+                "Futebol",
+                "Skate"
+            ]
+    },
+    {
+        "nome": "Adenor Leonardo",
+        "idade": "53",
+        "profissao": "Treinador de futebol",
+        "esportes":
+            [
+                "Ganhar títulos"
+            ]
+    }
+]

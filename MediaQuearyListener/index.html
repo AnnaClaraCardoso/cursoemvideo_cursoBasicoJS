@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const textAreaBreakpoit = window.matchMedia('(max-width: 767px)')
+
+        // window.addEventListener('resize', function(){})
+
+        function screenTest(e) {
+            if (e.matches) {
+                // the viewport is 600 pixels wide or less 
+                console.log('This is a narrow screen — less than 600px wide.')  
+                textarea.style.marginTop = "2vh"
+            }
+        }
+
+        textAreaBreakpoit.addListener(screenTest);
+
+    </script>
+</body>
+</html>

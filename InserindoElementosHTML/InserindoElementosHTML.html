@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserindo componentes</title>
+    <style>
+        * {
+            font-family: Helvetica, sans-serif;
+            font-size: 3vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">Conteúdo inicial</div>
+
+    <script>
+        var $wrapper = document.querySelector('.wrapper')
+
+    /*
+        // ADICIONANDO ELEMENTO COM innerHTML
+
+        htmlInicial = $wrapper.innerHTML
+
+        // Cria o conteúdo antecessor
+        novoHTML = 'HTML antecessor </br>'
+
+        // Adiciona o novo conteúdo ao que será a nova string do $wrapper
+        htmlInicial = novoHTML + htmlInicial
+
+        // Coloca a nova string(que é o HTML) no DOM
+        $wrapper.innerHTML = htmlInicial
+    */
+
+    /*
+        // ADICIONANDO ELEMENTO COM DOM Node API (insertBefore)
+
+        conteudoInicial = $wrapper.firstChild
+
+        // Cria novo nó de texto
+        novoConteudo = document.createTextNode('Inserindo HTML com insertBefore')
+        
+        // Cria novo nó de elemento HTML
+        HTMLbr = document.createElement('br')
+
+        // Insere o texto antes do primeiro nó filho
+        $wrapper.insertBefore(novoConteudo, conteudPoInicial)
+
+        // Insere HTML antes do último nó filho
+        $wrapper.insertBefore(HTMLbr, $wrapper.lastChild)
+    */ 
+
+    /*
+        // ADICIONANDO ELEMENTO UTILIZANDO FRAGMENTO DE DOCUMENTO (DocumentFragment)    
+
+        fragmento = new DocumentFragment()
+
+        fragmento.appendChild(document.createTextNode('Inserindo elemento com fragmento de documento'))
+        fragmento.appendChild(document.createElement('br'))
+
+        $wrapper.insertBefore(fragmento, $wrapper.firstChild)
+    */
+
+    /*
+        // ADICIONANDO ELEMENTOS UTILIZANDO insertAdjacentHTML()
+
+        paragrafoAnterior = '<p>Elemento paragrafo adicionado antes do elemento</p>'
+        $wrapper.insertAdjacentHTML('beforebegin', paragrafoAnterior)
+
+        paragrafoPosterior = '<p>Elemento paragrafo adicionado depois do elemento</p>'
+        $wrapper.insertAdjacentHTML('afterend', paragrafoPosterior)
+
+        conteudoAnterior = 'Novo conteúdo adicionado antes do conteúdo inicial do elemento<br>'
+        $wrapper.insertAdjacentHTML('afterbegin', conteudoAnterior)
+
+        conteudoPosterior = '<br>Novo conteúdo adicionado depois do conteúdo final do elemento'
+        $wrapper.insertAdjacentHTML('beforeend', conteudoPosterior)
+    */
+
+    </script>
+</body>
+</html>

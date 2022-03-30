@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Trabalhando com Flex</title>
+    <style>
+      
+      *{
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        
+      }
+      html {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh;        
+      }
+
+      section {
+        width: 100%;
+        height: 100%;
+
+      }
+
+      h1{
+        margin: 0 auto;
+        width: 40%;
+        text-align: center;
+      }
+
+      p{
+          margin: auto;
+          text-align: center;
+      }
+
+      #lista_cidades{
+          width: 80%;
+          background-color: #fff;
+          height: 100%;
+          margin: 0 auto;
+      }
+      #lista_cidades li {
+          padding: 1%;
+          margin: 1%;
+          font-size: 1.5rem;
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: #ccc;      
+      }
+    </style>
+
+  </head>
+
+  <body>
+    
+    <section>
+        <h1>CIDADES</h1>
+        <ol id="lista_cidades"></ol>
+    </section>    
+
+    <script> 
+        //Criando uma referência no DOM para a lista #cidades
+        let lista_cidades = document.querySelector("#lista_cidades");
+        //Criando o objeto XMLHttpRequest
+        let xhr = verificaRequest();
+
+        //Abertura da conexão, com método GET. O parâmetro TRUE (3º parâmetro) indica requisição assíncrona
+        xhr.open("GET", "cidades.txt", true);
+        //Manipulador de ventos da requisição
+        xhr.addEventListener("load", transferComplete);
+        xhr.addEventListener("error", transferFailed);
+        //Aqui é, de fato, realizada a requisição. Quando o status da requisição muda, a rotina de callback é executada (onload)
+        xhr.send(null); 
+
+        ///Função para manipulação da resposta, chamada quando a requisição respondida 
+        function transferComplete() {
+          //Verificação do estado e status da requisição
+          if (xhr.readyState === 4) {
+              if (xhr.status === 200) { // a propriedade status retorna o status de execução da REQUISIÇÃO
+                // O atributo responseText contém o conteúdo retornado (resposta)
+                console.log.apply(xhr.responseText);
+                // Separando as strings nos dados de texto ...
+                let cidades = xhr.responseText.split('\n');
+                cidades.forEach(function(e,i){
+                  // para cada string, um item de lista é criado para armazená-la e depois ele é adicionado a lista <ol>
+                  
+                  c.textContent = e;
+                  lista_cidades.appendChild(c);
+                })
+              // Caso ocorra algume erro na requisição
+              } else {
+                transferFailed(); 
+              }
+          }
+        };
+
+        /**Função para manipulação da resposta, chamada quando houver um erro **/
+        function transferFailed() {
+          console.error(xhr.statusText);
+          /*
+            a propriedade statusText retorna uma DOMstring com o status da RESPOSTA da requisição.
+            O texto pode ser "OK" ou "Not Found", exceto quando o readyState da requisição for igual 
+            a UNSENT ou OPENED, nesses casos a DOMstring estará vazia.
+          */ 
+        };
+
+        /* Função que cria e retorna um objeto de requisição HTTP compatível com todos navegadores (XMLHttpRequest ou activeXObject)*/
+        function verificaRequest() {
+            if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+                return req = new XMLHttpRequest();
+              } else if (window.ActiveXObject) { // IE
+                try {
+                    return req = new ActiveXObject("Msxml2.XMLHTTP");
+                }
+                catch (e) {
+                  try {
+                    return req = new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                  catch (e) { return false }
+                }
+              }
+        }
+
+    </script>
+  </body>
+</html>
